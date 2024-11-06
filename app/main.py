@@ -20,7 +20,9 @@ origins = [
     "*",  # TODO: set the allowed origins
 ]
 load_dotenv()
-app = FastAPI()
+app = FastAPI(
+    port=os.getenv("PORT", 8000)
+)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -72,8 +74,3 @@ def thread_details(thread_id: str):
     except Exception as e:
         print("Error in creating thread and run from openAI:", str(e))
         raise HTTPException(500, str(e))
-
-if __name__ == "__main__":
-    # Get the port from the environment variable, with a fallback default (e.g., 8000)
-    port = int(os.getenv("PORT", 8000))
-    uvicorn.run(app, host="0.0.0.0", port=port)
