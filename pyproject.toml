@@ -6,7 +6,7 @@ authors = ["Aaron Chen <dev.kst.aaron@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11"
 fastapi = "^0.115.4"
 uvicorn = "^0.32.0"
 openai = "^1.54.1"
