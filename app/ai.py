@@ -26,7 +26,8 @@ class Waddy():
                 elif event.event == "thread.run.completed":
                     print("\n----")
                     print(event.data.usage) # Total tokens
-                    yield f"data: {str(event.data.usage)}\n\n"
+                    # NOTE: Save to DB rather than yeilding
+                    # yield f"data: {str(event.data.usage)}\n\n"
         except Exception as e:
             print("Error in creating thread and run from openAI:", str(e))
             raise e
