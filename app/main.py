@@ -44,9 +44,9 @@ client = Waddy(
 # API Routes
 # testing thread id: thread_DWD5dVCcK1mhgh62fpWvcXdE
 @app.get('/')
-def home(thread_id: str):
+def home():
     try:
-        return "Hello!"
+        return "Hello, waddy is live!"
     except Exception as e:
         raise HTTPException(500, str(e))
 
